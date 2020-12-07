@@ -1,0 +1,23 @@
+import string
+import random
+def PasswordGen():
+  print("Hi user welcome to password genertor !!")
+  n=int(input("Enter length of the password you want :::"))
+
+  caps_string=string.ascii_uppercase
+  caps=list(caps_string)
+
+  lows_string=string.ascii_lowercase
+  lows=list(lows_string)
+
+  special=['@','#','$','&']
+  nums=['1','2','3','4','5','6','7','8','9','0']
+
+  all_list=caps+lows+nums
+  temp_pass=random.choice(caps)+random.choice(lows)+random.choice(nums)+random.choice(special)
+  password=''
+  for i in range(n-1):
+    password+=random.choice(all_list)
+  print(f"Your password of length {n} is :::::")
+  print(temp_pass+password)
+PasswordGen()  
